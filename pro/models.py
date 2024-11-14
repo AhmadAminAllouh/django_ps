@@ -1,5 +1,3 @@
-
-
 from django.db import models
 from django.conf.global_settings import AUTH_USER_MODEL
 # Create your models here.
@@ -31,7 +29,8 @@ class Project(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     user = models.ForeignKey(
         AUTH_USER_MODEL,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        null=True
     )
 
     def __str__(self):
