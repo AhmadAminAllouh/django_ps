@@ -18,6 +18,7 @@ class ProjectStatus(models.IntegerChoices):
 
 
 class Project(models.Model):
+    objects = None
     title = models.CharField(max_length=255)
     description = models.TextField()
     status = models.IntegerField(
