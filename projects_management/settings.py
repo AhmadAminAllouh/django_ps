@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from django.core.checks import database
 
 
 
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-801sn$b2g*6yaxkjk28qg9^w971)z=3@*3gw8r)hadfwz#dry9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Render']
 
 
 # Application definition
@@ -79,7 +80,6 @@ WSGI_APPLICATION = 'projects_management.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -141,3 +141,4 @@ INTERNAL_IPS = [
     "127.0.0.1",
     #...
 ]
+
