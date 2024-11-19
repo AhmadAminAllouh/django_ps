@@ -10,10 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-import os
-import dj_database_url
 from pathlib import Path
+
+import dj_database_url
 from django.core.checks import database
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +30,7 @@ SECRET_KEY = 'django-insecure-801sn$b2g*6yaxkjk28qg9^w971)z=3@*3gw8r)hadfwz#dry9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['Render']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -82,11 +83,16 @@ WSGI_APPLICATION = 'projects_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
+        'NAME': 'django_ps',
+        'USER': 'postgres',
+        'PASSWORD': 'ahmadamin',
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
 
@@ -136,7 +142,8 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/account/login'
 
 INTERNAL_IPS = [
-    # ...
+    #...
     "127.0.0.1",
-    # ...
+    #...
 ]
+
